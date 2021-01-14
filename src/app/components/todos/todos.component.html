@@ -1,2 +1,8 @@
+<app-add-todo (addTodo)="addTodo($event)"></app-add-todo>
+
+<!-- *ngFor loops through each object in the Todo array (which is in todos.component.ts) and instantiates each object as a Todo component.
+     [todo]="todo" hands the component its data from the array.
+     (deleteTodo)="deleteTodo($event)" lets the component call a function in its parent component.
+-->
 <app-todo-item *ngFor="let todo of todos" [todo]="todo" (deleteTodo)="deleteTodo($event)">
 </app-todo-item>

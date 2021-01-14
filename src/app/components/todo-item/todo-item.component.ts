@@ -8,9 +8,11 @@ import { Todo } from 'src/app/models/Todo'
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
-  @Input() todo: Todo;
+  //todo: todo is of TYPE Todo having those properties set when we established it in todo.ts
+  @Input() todo: Todo; // when parent component is setting values in this component
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
-
+  //Output = when this component is setting a value in the parent component
+  //if you want to display properties inside this class' html file, you don't need @ anything
 
   constructor(private todoService: TodoService) { }
 
