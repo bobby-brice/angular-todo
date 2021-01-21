@@ -15,7 +15,7 @@ export class TodoService {
 
   constructor(private http: HttpClient) {}
 
-  todosUrl = "https://jsonplaceholder.typicode.com/todos";
+  todosUrl:string = "https://jsonplaceholder.typicode.com/todos";
   todosLimit = '?_limit=5';
 
   getTodos():Observable<Todo[]> {
@@ -29,7 +29,7 @@ export class TodoService {
     return this.http.delete<Todo>(url, httpOptions)
   }
   //add Todo
-  addTodo(todo: Todo):Observable<Todo> {
+  addTodo(todo:Todo):Observable<Todo> {
     return this.http.post<Todo>(this.todosUrl, todo, httpOptions)
   }
 

@@ -16,7 +16,7 @@ export class TodosComponent implements OnInit {
 
   // todoService holds data for each todo component.
   // Here, we tell todoService to make API call to get data.
-  // We use an observable (which is like a promise), to assign that data to our local todos variable once the API call is finished.
+  // We use an observable (which is like a promise), to assign that data to our local todos variable once the API call is finished. subscribe is like .then() what to do aafter the promise returns
   ngOnInit(): void {
     this.todoService.getTodos().subscribe(todos => {
       this.todos = todos;
